@@ -4,17 +4,17 @@ import math
 
 parser = argparse.ArgumentParser()
 parser.add_argument("size", type=int)
-parser.add_argument("q", type=int, help="Number of people with a recessive gene")
-parser.add_argument("-d", "--dominant", action="store_true", help="q is number of dominant people instead of recessive")
+parser.add_argument("affected", type=int, help="Number of people with a recessive gene")
+parser.add_argument("-d", "--dominant", action="store_true", help="affected is number of dominant people instead of recessive")
 parser.add_argument("-n", "--noround", action="store_true", help="Disables rounding")
 parser.add_argument("-p", "--percent", action="store_true", help="Expresses as percent")
 args = parser.parse_args()
 
 size = args.size
 if args.dominant:
-    qf = size-args.q
+    qf = size-args.affected
 else:
-    qf = args.q
+    qf = args.affected
 if args.noround:
     q2  = qf/size
     q   = math.sqrt(q2)

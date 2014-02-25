@@ -10,5 +10,5 @@ python3 hwe.py [size] [people with recessive gene] [flags]
 
 Flags:
 -d makes it calculate for dominant genes instead of recessive genes.  
--n makes it not round
+-n makes it not round  
 -p expresses the numbers as percentages

@@ -1,0 +1,35 @@
+import argparse
+import math
+
+parser = argparse.ArgumentParser()
+parser.add_argument("size", type=int)
+parser.add_argument("q", type=int, help="Number of people with a recessive gene")
+parser.add_argument("-d", "--dominant", action="store_true", help="q is number of dominant people instead of recessive")
+parser.add_argument("-n", "--noround", action="store_true", help="Disables rounding")
+args = parser.parse_args()
+
+size = args.size
+if args.dominant:
+    qf = size-args.q
+else:
+    qf = args.q
+if args.noround:
+    q2  = qf/size
+    q   = math.sqrt(q2)
+    p   = 1-q
+    p2  = p**2
+    pq  = 2*p*q
+else:
+    q2  = round(qf/size, 2)
+    q   = round(math.sqrt(q2), 2)
+    p   = 1-q
+    p2  = round(p**2, 2)
+    pq  = round(2*p*q, 2)
+
+print(qf)
+print(size)
+print("p=" + str(p))
+print("q=" + str(q))
+print("p^2 (homozygous dominant)=" + str(p2))
+print("2pq (heterozygous dominant)=" + str(pq))
+print("q^2 (recessive)=" + str(q2))

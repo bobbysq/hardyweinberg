@@ -9,6 +9,6 @@ Run it as shown:
 python3 hwe.py [size] [people affected with a recessive gene] [flags]
 
 Flags:  
--d makes it so that the affected people are affected with a dominant gene
+-d makes it so that the affected people are affected with a dominant gene  
 -n makes it not round  
 -p expresses the numbers as percentages

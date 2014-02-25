@@ -1,7 +1,7 @@
 hardyweinberg
 =============
 
-Solver for Hardy-Weinberg problems, Python 3 must be used
+Solver for Hardy-Weinberg problems, Python 3 is reccomended, but 2.7 will work
 
 
 Run it as shown:

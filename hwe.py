@@ -8,6 +8,7 @@ parser.add_argument("affected", type=int, help="Number of people with a recessiv
 parser.add_argument("-d", "--dominant", action="store_true", help="affected is number of dominant people instead of recessive")
 parser.add_argument("-n", "--noround", action="store_true", help="Disables rounding")
 parser.add_argument("-p", "--percent", action="store_true", help="Expresses as percent")
+parser.add_argument("-N", "--number", action="store_true", help="Expresses as numbers. Don't use with -p!")
 args = parser.parse_args()
 
 size = args.size
@@ -27,7 +28,12 @@ else:
     p   = 1-q
     p2  = round(p**2, 2)
     pq  = round(2*p*q, 2)
-
+if args.number:
+    q2  = round(q2*size, 0)
+    q   = round(q*size, 0)
+    p   = size-q
+    p2  = round(p2*size, 0)
+    pq  = round(pq*size, 0)
 if args.percent:
     print(qf)
     print(size)
